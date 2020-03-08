@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock title %}
+
+{% block content %}
+{% for pacote in posts %}
+    <div class="mural">
+        <div class="head-post">
+            <span class="autor">{{ pacote.post.usuario }}</span>
+        </div>
+        <div class="texto-post">
+            <p>{{ pacote.post.conteudo }}</p>
+        </div>
+        <div class="opts-post">
+            <button onclick="curtir(this.id)" id="{{ pacote.post.id }}" class="btn btn-primary">
+                <i class="far fa-thumbs-up"></i><span class="curtidas">{{ pacote.curtidas }}</span>
+            </button>
+            
+            
+        </div>
+    </div>
+{% endfor %}
+{% endblock content %}
