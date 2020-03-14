@@ -40,6 +40,13 @@ def home(request):
         }
     )
 
+def cadastro(request):
+    if request.method == "POST":
+        pass
+    else:
+        return render(request, 'usuarios/cadastrar.html')
+
+
 def do_login(request):
     
     if request.method == "POST":
